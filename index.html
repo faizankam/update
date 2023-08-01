@@ -7,25 +7,41 @@
     <title>My Portfolio</title>
     <!-- Tailwind CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
-     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <style>
-    nav ul li a:hover {
-            color: darkcyan; /* Dark cyan color when the link is hovered */
+        nav ul li a:hover {
+            color: darkcyan;
         }
-</style>
-    </head>
+    </style>
+</head>
 
 <body>
     <!-- Navigation Bar -->
-    <nav class="bg-gray-900 text-white py-4">
+     <nav class="bg-gray-900 text-white py-4">
         <div class="container mx-auto flex justify-between items-center px-4">
             <h1 class="text-2xl font-bold">My Portfolio</h1>
-            <ul class="flex">
+            <div class="md:hidden">
+                <button id="menuToggle" class="text-white focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+            <ul class="hidden md:flex">
                 <li class="mx-4"><a href="#">Home</a></li>
                 <li class="mx-4"><a href="#about">About</a></li>
                 <li class="mx-4"><a href="#services">Services</a></li>
                 <li class="mx-4"><a href="#portfolio">Portfolio</a></li>
                 <li class="mx-4"><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="md:hidden" id="mobileMenu">
+            <ul class="flex flex-col items-center pt-4">
+                <li class="py-2"><a href="#">Home</a></li>
+                <li class="py-2"><a href="#about">About</a></li>
+                <li class="py-2"><a href="#services">Services</a></li>
+                <li class="py-2"><a href="#portfolio">Portfolio</a></li>
+                <li class="py-2"><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -43,19 +59,19 @@
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-2">About Me</h2>
             <p class="text-lg mb-8">Hello, I'm Faizan, a passionate programmer with a love for coding and problem-solving. I enjoy creating efficient and elegant solutions to real-world challenges using various programming languages and technologies.</p>
-            <div class="flex">
-                <div class="w-1/2 pr-8">
+            <div class="flex flex-col md:flex-row">
+                <div class="w-full md:w-1/2 pr-8">
                     <h3 class="text-xl font-bold mb-4">My Skills</h3>
                     <ul>
                         <li>HTML/CSS</li>
                         <li>JavaScript</li>
                         <li>Php</li>
                         <li>Bootstrap</li>
-                        <li>Tailwind Css</li>
+                        <li>Tailwind CSS</li>
                         <li>Node.js</li>
                     </ul>
                 </div>
-                <div class="w-1/2">
+                <div class="w-full md:w-1/2">
                     <h3 class="text-xl font-bold mb-4">My Experience</h3>
                     <p>I have worked on various projects, ranging from personal websites to collaborative web applications. My experience includes front-end and back-end development, as well as database design and implementation.</p>
                     <ul>
@@ -73,35 +89,12 @@
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-2">My Services</h2>
             <p class="text-lg mb-8">Welcome to my professional services, where I aim to provide you with exceptional solutions to enhance your online presence and boost your business. Below are the areas in which I can assist you:</p>
-            <div class="flex">
-                <div class="w-1/3 pr-8">
-                    <h3 class="text-xl font-bold mb-4">Website Development</h3>
-                    <p>
-                        As a web developer, I create modern, user-friendly websites tailored to your needs, with custom designs, responsive layouts, and seamless functionality. I offer front-end and back-end development, CMS integration, e-commerce solutions, and ongoing maintenance.</p>
-                </div>
-                <div class="w-1/3 pr-8">
-                    <h3 class="text-xl font-bold mb-4">Website Optimization</h3>
-                    <p>If you already have a website, I can enhance its performance and user experience. My services include page speed optimization, responsive design, SEO, conversion rate optimization, accessibility improvements, security enhancements, and detailed analytics reporting.</p>
-                </div>
-                <div class="w-1/3">
-                    <h3 class="text-xl font-bold mb-4">Web Application Development</h3>
-                    <p>I develop powerful and custom web applications that cater to your business needs. From requirement gathering and design to front-end and back-end development, I ensure seamless integration and offer ongoing support and maintenance. Let your business thrive with efficient and user-friendly web-based solutions.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-2">My Portfolio</h2>
-            <p class="text-lg mb-8">Some of my Projects are given below.</p>
-            <div class="grid grid-cols-3 gap-8">
+            <div class="grid gap-8 md:grid-cols-3">
                 <div class="bg-white shadow-lg rounded-lg overflow-hidden">
                     <a href="https://faizankam.github.io/SimpleRegistration/">
                         <img src="2.PNG" alt="Project Image" class="w-full">
                         <div class="p-4">
-                            <h3 class="text-xl font-bold mb-2">A Simple Registration form</h3>
+                            <h3 class="text-xl font-bold mb-2">A Simple Registration Form</h3>
                             <p class="text-gray-700">This is a simple Registration form that I can build for your websites easily under 5 to 10 minutes.</p>
                         </div>
                     </a>
@@ -110,7 +103,7 @@
                     <a href="https://faizankam.github.io/amazonclone/">
                         <img src="1.PNG" alt="Project Image" class="w-full">
                         <div class="p-4">
-                            <h3 class="text-xl font-bold mb-2">Amazon clone</h3>
+                            <h3 class="text-xl font-bold mb-2">Amazon Clone</h3>
                             <p class="text-gray-700">This is Full Amazon clone Website. It took me 4 hours to build.</p>
                         </div>
                     </a>
@@ -127,9 +120,8 @@
             </div>
         </div>
     </section>
-    
 
-    <!-- Contact Section -->
+      <!-- Contact Section -->
     <section id="contact" class="bg-gray-800 text-white py-20">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-2">Let's work together...</h2>
@@ -161,9 +153,13 @@
     <!-- Footer Section -->
     <footer class="bg-gray-900 text-white text-center py-4">
         <p>&copy; 2023 Faizan Portfolio. All rights reserved.</p>
-        
-            <script>
-  // Add an event listener to the button
+    </footer>
+	<script>
+    document.getElementById("menuToggle").addEventListener("click", function() {
+        const mobileMenu = document.getElementById("mobileMenu");
+        mobileMenu.classList.toggle("hidden");
+    });
+ // Add an event listener to the button
   document.getElementById("sendButton").addEventListener("click", function() {
     // Recipient email address
     var recipientEmail = "kamboh8208@gmail.com";
@@ -175,9 +171,8 @@
     window.open(mailtoLink, "_blank");
   });
 
+</script>
 
-        </script>
-    </footer>
 </body>
 
 </html>
