@@ -143,22 +143,22 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="bg-gray-800 text-white py-20">
+   <section id="contact" class="bg-gray-800 text-white py-20">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-2">Let's work together...</h2>
             <p class="text-lg mb-8">How do you take your coffee?</p>
             <form class="w-full max-w-lg">
                 <div class="flex flex-wrap mb-6">
                     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                        <input class="appearance-none block w-full bg-gray-700 text-white border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-600" type="text" placeholder="Name">
+                        <input class="appearance-none block w-full bg-gray-700 text-white border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-600" type="text" id="nameInput" placeholder="Name">
                     </div>
                     <div class="w-full md:w-1/2 px-3">
-                        <input class="appearance-none block w-full bg-gray-700 text-white border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-600" type="email" placeholder="Email">
+                        <input class="appearance-none block w-full bg-gray-700 text-white border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-600" type="email" id="emailInput" placeholder="Email">
                     </div>
                 </div>
                 <div class="flex flex-wrap mb-6">
                     <div class="w-full px-3">
-                        <textarea class="appearance-none block w-full bg-gray-700 text-white border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-600" placeholder="Message"></textarea>
+                        <textarea class="appearance-none block w-full bg-gray-700 text-white border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-600" id="messageInput" placeholder="Message"></textarea>
                     </div>
                 </div>
                 <div class="flex justify-end">
@@ -193,10 +193,15 @@
         });
 
         document.getElementById("sendButton").addEventListener("click", function() {
-            var recipientEmail = "kamboh8208@gmail.com";
-            var mailtoLink = "mailto:" + recipientEmail;
-            window.open(mailtoLink, "_blank");
-        });
+        var recipientEmail = "kamboh8208@gmail.com";
+        var subject = encodeURIComponent("Contact from website");
+        var name = encodeURIComponent(document.getElementById("nameInput").value);
+        var email = encodeURIComponent(document.getElementById("emailInput").value);
+        var message = encodeURIComponent(document.getElementById("messageInput").value);
+
+        var mailtoLink = `mailto:${recipientEmail}?subject=${subject}&body=Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+        window.location.href = mailtoLink;
+    });
 
     </script>
 
