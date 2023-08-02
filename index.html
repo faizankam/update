@@ -7,30 +7,20 @@
     <title>My Portfolio</title>
     <!-- Tailwind CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-    <style>
-        nav ul li a:hover {
-            color: darkcyan;
-        }
-	     .social-icons{
-            font-size: 23px;
-        }
-    </style>
 </head>
 
 <body>
-    <!-- Navigation Bar -->
-     <nav class="bg-gray-900 text-white py-4">
+    <nav class="bg-gray-900 text-white py-4">
         <div class="container mx-auto flex justify-between items-center px-4">
             <h1 class="text-2xl font-bold">My Portfolio</h1>
             <div class="md:hidden">
                 <button id="menuToggle" class="text-white focus:outline-none">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
+                    <i class="fas fa-bars"></i>
                 </button>
             </div>
-            <ul class="hidden md:flex">
+            <ul class="hidden md:flex md:space-x-4">
                 <li class="mx-4"><a href="#">Home</a></li>
                 <li class="mx-4"><a href="#about">About</a></li>
                 <li class="mx-4"><a href="#services">Services</a></li>
@@ -87,45 +77,72 @@
         </div>
     </section>
 
-   <!-- Services Section -->
-<section id="services" class="bg-gray-100 py-20">
-    <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-2">My Services</h2>
-        <p class="text-lg mb-8">Welcome to my professional services, where I aim to provide you with exceptional solutions to enhance your online presence and boost your business. Below are the areas in which I can assist you:</p>
-        <div class="grid gap-8 md:grid-cols-3">
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                <a href="https://faizankam.github.io/SimpleRegistration/" target="_blank">
-                    <img src="2.PNG" alt="Project Image" class="w-full">
+    <!-- Services Section -->
+    <section id="services" class="bg-gray-100 py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-2">My Services</h2>
+            <p class="text-lg mb-8">Welcome to my professional services, where I aim to provide you with exceptional solutions to enhance your online presence and boost your business. Below are the areas in which I can assist you:</p>
+            <div class="grid gap-8 md:grid-cols-3">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
                     <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2">A Simple Registration Form</h3>
-                        <p class="text-gray-700">This is a simple Registration form that I can build for your websites easily under 5 to 10 minutes.</p>
+                        <h3 class="text-xl font-bold mb-2">Custom Website Development:</h3>
+                        <p class="text-gray-700">As a web developer, I offer custom website development services that cater to your unique requirements. Whether you need a personal portfolio site, a business website, an e-commerce platform, or any other type of web presence, I can create a tailored solution for you. Using the latest web technologies and design principles, I will ensure your website is visually appealing, functional, and optimized for a seamless user experience.</p>
                     </div>
-                </a>
-            </div>
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                <a href="https://faizankam.github.io/amazonclone/" target="_blank">
-                    <img src="1.PNG" alt="Project Image" class="w-full">
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
                     <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2">Amazon Clone</h3>
-                        <p class="text-gray-700">This is Full Amazon clone Website. It took me 4 hours to build.</p>
+                        <h3 class="text-xl font-bold mb-2">Website Optimization and Performance Enhancement:</h3>
+                        <p class="text-gray-700">Are you experiencing slow loading times, low search engine rankings, or a high bounce rate on your website? I can help! With my web optimization services, I will thoroughly analyze your website to identify performance bottlenecks and areas of improvement. From optimizing images and code to implementing caching and compression techniques, I will enhance your website's speed, responsiveness, and search engine visibility, resulting in a better user experience and increased traffic.</p>
                     </div>
-                </a>
-            </div>
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                <a href="https://faizankam.github.io/simplewebsite/" target="_blank">
-                    <img src="3.JPG" alt="Project Image" class="w-full">
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
                     <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2">Simple Website</h3>
-                        <p class="text-gray-700">This is a simple Website that took me 10 to 15 minutes to build.</p>
+                        <h3 class="text-xl font-bold mb-2">Website Troubleshooting and Maintenance:</h3>
+                        <p class="text-gray-700">Having trouble with your existing website? Don't worry; I've got you covered! My website troubleshooting and maintenance services are designed to fix any issues that might be hindering your site's performance. Whether it's fixing broken links, resolving compatibility problems, or debugging code errors, I will ensure your website is running smoothly and efficiently. Additionally, I offer regular maintenance to keep your website up to date with the latest security patches and software updates, ensuring its continued functionality and security.</p>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="bg-gray-100 py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-2">My Portfolio</h2>
+            <p class="text-lg mb-8">Here are some of the projects I have worked on:</p>
+            <div class="grid gap-8 md:grid-cols-3">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <a href="https://faizankam.github.io/SimpleRegistration/" target="_blank">
+                        <img src="2.PNG" alt="Project Image" class="w-full max-w-full">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">A Simple Registration Form</h3>
+                            <p class="text-gray-700">This is a simple Registration form that I can build for your websites easily under 5 to 10 minutes.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <a href="https://faizankam.github.io/amazonclone/" target="_blank">
+                        <img src="1.PNG" alt="Project Image" class="w-full max-w-full">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Amazon Clone</h3>
+                            <p class="text-gray-700">This is Full Amazon clone Website. It took me 4 hours to build.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <a href="https://faizankam.github.io/simplewebsite/" target="_blank">
+                        <img src="3.JPG" alt="Project Image" class="w-full max-w-full">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Simple Website</h3>
+                            <p class="text-gray-700">This is a simple Website that took me 10 to 15 minutes to build.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <!-- Contact Section -->
+    <!-- Contact Section -->
     <section id="contact" class="bg-gray-800 text-white py-20">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-2">Let's work together...</h2>
@@ -146,16 +163,15 @@
                 </div>
                 <div class="flex justify-end">
                     <button id="sendButton" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-                      Send Message
+                        Send Message
                     </button>
-                  </div>
-                  
+                </div>
             </form>
         </div>
     </section>
 
     <!-- Footer Section -->
-     <footer class="bg-gray-900 text-white text-center py-4">
+    <footer class="bg-gray-900 text-white text-center py-4">
         <div class="social-icons">
             <a href="https://www.facebook.com/faizan8208" target="_blank">
                 <i class="fab fa-facebook-square"></i>
@@ -170,26 +186,19 @@
         <p>&copy; 2023 Faizan Portfolio. All rights reserved.</p>
     </footer>
 
+    <script>
+        document.getElementById("menuToggle").addEventListener("click", function() {
+            const mobileMenu = document.getElementById("mobileMenu");
+            mobileMenu.classList.toggle("hidden");
+        });
 
-	
-	<script>
-    document.getElementById("menuToggle").addEventListener("click", function() {
-        const mobileMenu = document.getElementById("mobileMenu");
-        mobileMenu.classList.toggle("hidden");
-    });
- // Add an event listener to the button
-  document.getElementById("sendButton").addEventListener("click", function() {
-    // Recipient email address
-    var recipientEmail = "kamboh8208@gmail.com";
+        document.getElementById("sendButton").addEventListener("click", function() {
+            var recipientEmail = "kamboh8208@gmail.com";
+            var mailtoLink = "mailto:" + recipientEmail;
+            window.open(mailtoLink, "_blank");
+        });
 
-    // Create the mailto link with the recipient email address
-    var mailtoLink = "mailto:" + recipientEmail;
-
-    // Open the user's default email client with the pre-filled recipient email
-    window.open(mailtoLink, "_blank");
-  });
-
-</script>
+    </script>
 
 </body>
 
