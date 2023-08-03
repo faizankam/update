@@ -9,10 +9,66 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
+    <style>
+       body.dark {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+body.dark a {
+    color: #ffffff;
+}
+
+/* Add more styles for dark theme as needed */
+
+/* Dark theme styles for Services Section */
+body.dark #services {
+    background: linear-gradient(45deg, rgb(0, 0, 0), rgb(60, 61, 66));
+}
+
+body.dark #services h2 {
+    color: #ffffff;
+}
+
+body.dark #services p {
+    color: #cccccc;
+}
+
+body.dark #services .bg-white {
+    background-color: #000000;
+}
+
+body.dark #services .text-gray-700 {
+    color: #ffffff;
+}
+
+/* Dark theme styles for Portfolio Section */
+body.dark #portfolio {
+    background: linear-gradient(45deg, rgb(83, 83, 83), rgb(0, 0, 0));
+}
+
+body.dark #portfolio h2 {
+    color: #ffffff;
+}
+
+body.dark #portfolio p {
+    color: #ffffff;
+}
+
+body.dark #portfolio .bg-white {
+    background-color: #000000;
+}
+
+body.dark #portfolio .text-gray-700 {
+    color: #e7e6e6;
+}
+
+    </style>
 </head>
 
 <body>
-    <nav class="bg-gray-900 text-white py-4">
+     <nav class="bg-gray-900 text-white py-4">
         <div class="container mx-auto flex justify-between items-center px-4">
             <h1 class="text-2xl font-bold">My Portfolio</h1>
             <div class="md:hidden">
@@ -27,6 +83,14 @@
                 <li class="mx-4"><a href="#portfolio">Portfolio</a></li>
                 <li class="mx-4"><a href="#contact">Contact</a></li>
             </ul>
+            <!-- Add the button to select the dark theme -->
+            <div class="hidden md:flex items-center space-x-2">
+                <span>Dark Theme</span>
+                <label class="switch">
+                    <input type="checkbox" id="darkThemeToggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
         </div>
         <div class="md:hidden" id="mobileMenu">
             <ul class="flex flex-col items-center pt-4">
@@ -36,6 +100,14 @@
                 <li class="py-2"><a href="#portfolio">Portfolio</a></li>
                 <li class="py-2"><a href="#contact">Contact</a></li>
             </ul>
+            <!-- Add the button to select the dark theme in mobile menu -->
+            <div class="flex items-center justify-center py-2">
+                <span>Dark Theme</span>
+                <label class="switch">
+                    <input type="checkbox" id="darkThemeToggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
         </div>
     </nav>
 
@@ -48,7 +120,7 @@
     </header>
 
     <!-- About Section -->
-    <section id="about" class="py-20">
+     <section id="about" class="py-20">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-2">About Me</h2>
             <p class="text-lg mb-8">Hello, I'm Faizan, a passionate programmer with a love for coding and problem-solving. I enjoy creating efficient and elegant solutions to real-world challenges using various programming languages and technologies.</p>
@@ -78,7 +150,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="bg-gray-100 py-20">
+     <section id="services" class="bg-gray-100 py-20">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-2">My Services</h2>
             <p class="text-lg mb-8">Welcome to my professional services, where I aim to provide you with exceptional solutions to enhance your online presence and boost your business. Below are the areas in which I can assist you:</p>
@@ -106,7 +178,7 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="bg-gray-100 py-20">
+     <section id="portfolio" class="bg-gray-100 py-20">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-2">My Portfolio</h2>
             <p class="text-lg mb-8">Here are some of the projects I have worked on:</p>
@@ -143,7 +215,7 @@
     </section>
 
     <!-- Contact Section -->
-   <section id="contact" class="bg-gray-800 text-white py-20">
+     <section id="contact" class="bg-gray-800 text-white py-20">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-2">Let's work together...</h2>
             <p class="text-lg mb-8">How do you take your coffee?</p>
@@ -171,7 +243,7 @@
     </section>
 
     <!-- Footer Section -->
-    <footer class="bg-gray-900 text-white text-center py-4">
+     <footer class="bg-gray-900 text-white text-center py-4">
         <div class="social-icons">
             <a href="https://www.facebook.com/faizan8208" target="_blank">
                 <i class="fab fa-facebook-square"></i>
@@ -186,25 +258,47 @@
         <p>&copy; 2023 Faizan Portfolio. All rights reserved.</p>
     </footer>
 
+  
     <script>
         document.getElementById("menuToggle").addEventListener("click", function() {
             const mobileMenu = document.getElementById("mobileMenu");
             mobileMenu.classList.toggle("hidden");
         });
 
+        // Function to toggle dark theme
+        function toggleDarkTheme() {
+            document.body.classList.toggle("dark");
+        }
+
+        // Check if the dark theme is already enabled or not
+        const darkThemeToggle = document.getElementById("darkThemeToggle");
+        if (localStorage.getItem("darkThemeEnabled") === "true") {
+            document.body.classList.add("dark");
+            darkThemeToggle.checked = true;
+        }
+
+        // Listen for changes in the dark theme toggle
+        darkThemeToggle.addEventListener("change", function() {
+            if (darkThemeToggle.checked) {
+                document.body.classList.add("dark");
+                localStorage.setItem("darkThemeEnabled", "true");
+            } else {
+                document.body.classList.remove("dark");
+                localStorage.setItem("darkThemeEnabled", "false");
+            }
+        });
+
         document.getElementById("sendButton").addEventListener("click", function() {
-        var recipientEmail = "kamboh8208@gmail.com";
-        var subject = encodeURIComponent("Contact from website");
-        var name = encodeURIComponent(document.getElementById("nameInput").value);
-        var email = encodeURIComponent(document.getElementById("emailInput").value);
-        var message = encodeURIComponent(document.getElementById("messageInput").value);
+            var recipientEmail = "kamboh8208@gmail.com";
+            var subject = encodeURIComponent("Contact from website");
+            var name = encodeURIComponent(document.getElementById("nameInput").value);
+            var email = encodeURIComponent(document.getElementById("emailInput").value);
+            var message = encodeURIComponent(document.getElementById("messageInput").value);
 
-        var mailtoLink = `mailto:${recipientEmail}?subject=${subject}&body=Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
-        window.location.href = mailtoLink;
-    });
-
+            var mailtoLink = `mailto:${recipientEmail}?subject=${subject}&body=Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+            window.location.href = mailtoLink;
+        });
     </script>
-
 </body>
 
 </html>
