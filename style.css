@@ -1,0 +1,50 @@
+       body.dark {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+body.dark a {
+    color: #ffffff;
+}
+
+
+body.dark #services {
+    background: linear-gradient(45deg, rgb(0, 0, 0), rgb(60, 61, 66));
+}
+
+body.dark #services h2 {
+    color: #ffffff;
+}
+
+body.dark #services p {
+    color: #cccccc;
+}
+
+body.dark #services .bg-white {
+    background-color: #000000;
+}
+
+body.dark #services .text-gray-700 {
+    color: #ffffff;
+}
+
+/* Dark theme styles for Portfolio Section */
+body.dark #portfolio {
+    background: linear-gradient(45deg, rgb(83, 83, 83), rgb(0, 0, 0));
+}
+
+body.dark #portfolio h2 {
+    color: #ffffff;
+}
+
+body.dark #portfolio p {
+    color: #ffffff;
+}
+
+body.dark #portfolio .bg-white {
+    background-color: #000000;
+}
+
+body.dark #portfolio .text-gray-700 {
+    color: #e7e6e6;
+}
